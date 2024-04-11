@@ -4,7 +4,7 @@ class Apple
 {
 public:
     // Метод для доступа к единственному экземпляру класса
-     Apple& getInstance()
+    static Apple& getInstance()
     {
         static Apple instance;
         return instance;
