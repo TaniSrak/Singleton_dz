@@ -1,16 +1,16 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 class Apple 
 {
 public:
-    // Ìåòîä äëÿ äîñòóïà ê åäèíñòâåííîìó ýêçåìïëÿðó êëàññà
-    static Apple& getInstance()
+    // ÐœÐµÑ‚Ð¾Ð´ Ð´Ð»Ñ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ðº ÐµÐ´Ð¸Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ð¾Ð¼Ñƒ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ñƒ ÐºÐ»Ð°ÑÑÐ°
+     Apple& getInstance()
     {
         static Apple instance;
         return instance;
     }
 
-    // Ìåòîäû äëÿ äîñòóïà ê äàííûì ïîëÿì
+    // ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð´Ð»Ñ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ðº Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð¿Ð¾Ð»ÑÐ¼
     int getNutritionalValue() const 
     {
         return nutritionalValue;
@@ -21,15 +21,15 @@ public:
         return timeToRot;
     }
 
-    // Ìåòîä äëÿ óìåíüøåíèÿ ïèòàòåëüíîé öåííîñòè
+    // ÐœÐµÑ‚Ð¾Ð´ Ð´Ð»Ñ ÑƒÐ¼ÐµÐ½ÑŒÑˆÐµÐ½Ð¸Ñ Ð¿Ð¸Ñ‚Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ñ†ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸
     void use() {
         if (nutritionalValue > 0) {
             nutritionalValue -= 10;
             timeToRot--;
-            std::cout << "ßáëîêî áó, ïèùåâàÿ öåííîñòü: " << nutritionalValue << ", âðåìÿ ñãíèâàíèÿ: " << timeToRot << std::endl;
+            std::cout << "Ð¯Ð±Ð»Ð¾ÐºÐ¾ Ð±Ñƒ, Ð¿Ð¸Ñ‰ÐµÐ²Ð°Ñ Ñ†ÐµÐ½Ð½Ð¾ÑÑ‚ÑŒ: " << nutritionalValue << ", Ð²Ñ€ÐµÐ¼Ñ ÑÐ³Ð½Ð¸Ð²Ð°Ð½Ð¸Ñ: " << timeToRot << std::endl;
         }
         else {
-            std::cout << "Â ÿáëîêå íå îñòàëîñü ïèòàòåëüíîé öåííîñòè " << std::endl;
+            std::cout << "Ð’ ÑÐ±Ð»Ð¾ÐºÐµ Ð½Ðµ Ð¾ÑÑ‚Ð°Ð»Ð¾ÑÑŒ Ð¿Ð¸Ñ‚Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ñ†ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸ " << std::endl;
         }
     }
 
@@ -37,7 +37,7 @@ private:
     int nutritionalValue;
     int timeToRot;
 
-    // Ïðèâàòíûé êîíñòðóêòîð è äåñòðóêòîð äëÿ ïðåäîòâðàùåíèÿ ñîçäàíèÿ ýêçåìïëÿðîâ êëàññà èçâíå
+    // ÐŸÑ€Ð¸Ð²Ð°Ñ‚Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¸ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð´Ð»Ñ Ð¿Ñ€ÐµÐ´Ð¾Ñ‚Ð²Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð¾Ð² ÐºÐ»Ð°ÑÑÐ° Ð¸Ð·Ð²Ð½Ðµ
     Apple() : nutritionalValue(100), timeToRot(10) {}
     ~Apple() {}
 };
@@ -46,10 +46,10 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	int n;
 
-    // Ïîëó÷åíèå ýêçåìïëÿðà
+    // ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€Ð°
     Apple& apple = Apple::getInstance();
 
-    // Èñïîëüçîâàíèå òûáëîêà
+    // Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ‚Ñ‹Ð±Ð»Ð¾ÐºÐ°
     apple.use();
 
 	return 0;
